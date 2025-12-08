@@ -18,6 +18,22 @@ async function getMovies(url) {
   showMovies(data.results)
 }
 
+
+/* axios version
+
+async function getMovies(url) {
+  try {
+    const res = await axios.get(url)
+    const data = res.data
+    showMovies(data.results)
+  } catch (error) {
+    console.error('Hata:', error)
+  }
+} 
+
+*/
+
+
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
