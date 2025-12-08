@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              space: ['Space Grotesk', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <title>Feedback</title>
+
+    <!-- JS ile oluşturulacak .fa-heart için CSS -->
+    <style>
+      .fa-heart {
+        color: #ca0b4a;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+
+  <body class="font-space flex justify-center items-center h-screen m-0 overflow-hidden bg-[#f1f1f1]">
+
+    <div id="panel" class="panel-container bg-white shadow-[0_6px_12px_-2px_rgba(50,50,93,0.25),0_3px_7px_-3px_rgba(0,0,0,0.3)] rounded-md text-[90%] flex flex-col items-center justify-center text-center p-8 max-w-[500px]">
+      
+      <strong class="leading-6">
+        Geri bildiriminiz bizim için önemli lütfen memnuniyet durumunuzu bizimle paylaşın.
+      </strong>
+
+      <div class="ratings-container flex my-4">
+        
+        <div class="rating cursor-pointer m-2 group">
+          <p class="m-0 text-[6rem] transition-transform duration-500 group-hover:scale-125 group-active:scale-125">😿</p>
+          <small class="font-bold text-[#555] transition-colors duration-500 group-hover:text-[#111] group-active:text-[#111]">Mutsuz</small>
+        </div>
+
+        <div class="rating cursor-pointer m-2 group">
+          <p class="m-0 text-[6rem] transition-transform duration-500 group-hover:scale-125 group-active:scale-125">🙀</p>
+          <small class="font-bold text-[#555] transition-colors duration-500 group-hover:text-[#111] group-active:text-[#111]">Yorumsuz</small>
+        </div>
+
+        <div class="rating cursor-pointer m-2 group">
+          <p class="m-0 text-[6rem] transition-transform duration-500 group-hover:scale-125 group-active:scale-125">😻</p>
+          <small class="font-bold text-[#555] transition-colors duration-500 group-hover:text-[#111] group-active:text-[#111]">Memnun</small>
+        </div>
+
+      </div>
+
+      <button
+        class="btn bg-[tomato] border-none text-white font-space rounded-full py-4 px-8 text-[100%] font-bold tracking-[2px] cursor-pointer transition-transform duration-300 focus:outline-none active:scale-95"
+        id="send">
+        Değerlendir
+      </button>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
