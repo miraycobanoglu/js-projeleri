@@ -18,6 +18,39 @@ async function getUser(username) {
   }
 }
 
+
+// FETCH ile yapılan versiyon
+/*
+async function getUser(username) {
+  try {
+    const res = await fetch(API_URL + username)
+
+    // Hata kontrolü FETCH'te manuel yapılır!
+    if (!res.ok) {
+      if (res.status === 404) {
+        createErrorCard('Aradığınız kullanıcı bulunamadı :(')
+        return
+      }
+      throw new Error('Kullanıcı bilgisi alınamadı.')
+    }
+
+    const data = await res.json()
+
+    createUserCard(data)
+    getRepos(username)
+
+  } catch (err) {
+    console.log(err)
+    createErrorCard('Kullanıcıyı çekerken bir hata oluştu.')
+  }
+}
+*/
+
+
+
+
+
+
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
@@ -94,6 +127,29 @@ async function getRepos(username) {
     createErrorCard('Repoları çekerken hata oluştu.')
   }
 }
+
+
+// FETCH ile yapılan versiyon
+/*
+async function getRepos(username) {
+  try {
+    const res = await fetch(API_URL + username + '/repos')
+
+    if (!res.ok) {
+      throw new Error('Repo bilgisi alınamadı.')
+    }
+
+    const data = await res.json()
+
+    addReposToCard(data)
+
+  } catch (err) {
+    console.log(err)
+    createErrorCard('Repoları çekerken hata oluştu.')
+  }
+}
+*/
+
 
 function addReposToCard(repos) {
   const reposEl = document.getElementById('repos')
